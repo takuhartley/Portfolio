@@ -1,0 +1,132 @@
+.project-details-page-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: auto;
+  background-color: #dddddd;
+}
+
+.project-details-page-container .project-details-page-link a {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #86c09e;
+  text-decoration: none;
+  margin: 20px;
+  padding: 0.5em 0.75em;
+  border-radius: 5px;
+  color: white;
+}
+
+.project-details-page-container .project-details-page-title {
+  margin: 0;
+  width: 50vw;
+}
+
+.project-details-page-container .project-details-page-title p {
+  padding-left: 5vw;
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.project-details-page-container .project-details-page-subTitle {
+  margin: 0;
+  width: 50vw;
+}
+
+.project-details-page-container .project-details-page-subTitle p {
+  padding-left: 5vw;
+  margin: 0;
+}
+
+.project-details-page-container .project-details-page-image {
+  padding: 0px;
+  margin: 0;
+}
+
+.project-details-page-container .project-details-page-image img {
+  padding: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: auto;
+}
+
+.project-details-page-container .project-details-page-description {
+  padding: 4em;
+}
+
+.project-details-page-container .project-details-page-description p {
+  line-height: 1.5em;
+  word-spacing: 0.25em;
+}
+
+@media screen and (max-width: 960px) {
+  .project-details-page-container {
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    width: auto;
+    background-color: #fff;
+  }
+  .project-details-page-container .project-details-page-link {
+    position: absolute;
+  }
+  .project-details-page-container .project-details-page-link a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    bottom: 0;
+    background-color: #86c09e;
+    text-decoration: none;
+    margin: 20px;
+    padding: 0.5em 0.75em;
+    border-radius: 5px;
+    color: white;
+  }
+  .project-details-page-container .project-details-page-title {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+  }
+  .project-details-page-container .project-details-page-title p {
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+  .project-details-page-container .project-details-page-subTitle {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .project-details-page-container .project-details-page-subTitle p {
+    margin: 0;
+  }
+  .project-details-page-container .project-details-page-image {
+    padding: 0;
+    margin: 0;
+  }
+  .project-details-page-container .project-details-page-image img {
+    padding: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: auto;
+  }
+  .project-details-page-container .project-details-page-description {
+    padding: 1em;
+    margin: 0;
+  }
+  .project-details-page-container .project-details-page-description p {
+    line-height: 1.5em;
+    word-spacing: 0.25em;
+  }
+}
+/*# sourceMappingURL=ProjectDetailsPage.css.map */

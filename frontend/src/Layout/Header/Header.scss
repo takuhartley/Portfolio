@@ -1,0 +1,134 @@
+.header-container {
+    // position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+
+    header {
+        background-color: #527668;
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4em;
+            height: 4em;
+
+            a {
+                cursor: pointer;
+                position: relative;
+                padding: 0.1em;
+                font-size: 2em;
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+            }
+        }
+
+        .toggle {
+            display: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 960px) {
+
+    .header-container {
+        header {
+            .logo {
+                border: 1px dotted red;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: auto;
+                height: 4em;
+
+                a {
+                    cursor: pointer;
+                    position: relative;
+                    padding: 0.1em;
+                    font-size: 2em;
+                    font-weight: bold;
+                    color: black;
+                    text-decoration: none;
+                }
+            }
+
+            .toggle {
+                width: 4em;
+                height: 4em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+                z-index: 2000;
+
+                .hamburger-react {
+                    padding: 1em;
+                }
+
+            }
+
+            .panel {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                flex-direction: column;
+                width: 90%;
+                height: 80vh;
+                opacity: 1;
+                transition: all 1s ease;
+            }
+
+            .panel.active {
+                display: flex;
+                background-color: #527668;
+                right: 0;
+                opacity: 1;
+                z-index: 200;
+                transition: all 1s ease;
+                border-bottom-left-radius: 25px;
+            }
+
+            .backdrop {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100vw;
+                height: 100vh;
+                opacity: 1;
+            }
+
+            .backdrop.active {
+                display: flex;
+                background-color: rgb(0, 0, 0);
+                right: 0;
+                opacity: 0.5;
+                z-index: 100;
+            }
+        }
+
+        .navbar {
+            display: none;
+            transition: all 0.5s ease;
+        }
+
+        .navbar.active {
+            margin: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            color: white;
+            height: 80vh;
+            width: 90%;
+            z-index: 1000;
+        }
+    }
+}

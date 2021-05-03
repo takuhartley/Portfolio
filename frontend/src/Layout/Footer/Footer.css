@@ -1,0 +1,55 @@
+.footer-wrapper {
+  background-color: #527668;
+  min-height: 4em;
+  max-height: 10em;
+  height: 6em;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer-wrapper .footer-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer-wrapper .footer-date p {
+  font-size: 0.75em;
+  color: black;
+}
+
+.footer-wrapper .footer-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer-wrapper .footer-author p {
+  font-size: 0.75em;
+  color: black;
+}
+
+.footer-wrapper .footer-author p span {
+  font-size: 0.8em;
+}
+/*# sourceMappingURL=Footer.css.map */

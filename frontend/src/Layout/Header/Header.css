@@ -1,0 +1,148 @@
+.header-container {
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.header-container header {
+  background-color: #527668;
+}
+
+.header-container header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 4em;
+  height: 4em;
+}
+
+.header-container header .logo a {
+  cursor: pointer;
+  position: relative;
+  padding: 0.1em;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.header-container header .toggle {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .header-container header .logo {
+    border: 1px dotted red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: auto;
+    height: 4em;
+  }
+  .header-container header .logo a {
+    cursor: pointer;
+    position: relative;
+    padding: 0.1em;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+  }
+  .header-container header .toggle {
+    width: 4em;
+    height: 4em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 2000;
+  }
+  .header-container header .toggle .hamburger-react {
+    padding: 1em;
+  }
+  .header-container header .panel {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    height: 80vh;
+    opacity: 1;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .header-container header .panel.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #527668;
+    right: 0;
+    opacity: 1;
+    z-index: 200;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    border-bottom-left-radius: 25px;
+  }
+  .header-container header .backdrop {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+  }
+  .header-container header .backdrop.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: black;
+    right: 0;
+    opacity: 0.5;
+    z-index: 100;
+  }
+  .header-container .navbar {
+    display: none;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .header-container .navbar.active {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: white;
+    height: 80vh;
+    width: 90%;
+    z-index: 1000;
+  }
+}
+/*# sourceMappingURL=Header.css.map */

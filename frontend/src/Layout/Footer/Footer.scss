@@ -1,0 +1,37 @@
+.footer-wrapper {
+    background-color: #527668;
+    min-height: 4em;
+    max-height: 10em;
+    height: 6em;
+    padding: 1em;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    ;
+
+    .footer-date {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+            font-size: 0.75em;
+            color: rgb(0, 0, 0);
+        }
+    }
+
+    .footer-author {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+            font-size: 0.75em;
+            color: rgb(0, 0, 0);
+
+            span {
+                font-size: 0.8em;
+            }
+        }
+    }
+}

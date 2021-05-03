@@ -1,0 +1,34 @@
+.homepage-container {
+    height: auto;
+    background-color: #1b1b1b;
+
+    .homepage-title-container {
+        width: auto;
+        padding: 40px 80px;
+
+        .homepage-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #a8d8ff;
+        }
+
+        .homepage-subtitle {
+            font-size: 1em;
+            font-weight: bold;
+            color: #ececec;
+        }
+
+        .homepage-location {
+            font-size: 1em;
+            width: fit-content;
+            padding: 5px;
+            border: 1px solid#a8d8ff;
+            border-radius: 5px;
+            color: #a8d8ff;
+        }
+    }
+
+    .scene-one-container {
+        padding: 40px 80px;
+    }
+}

@@ -1,0 +1,37 @@
+.homepage-container {
+  height: auto;
+  background-color: #1b1b1b;
+}
+
+.homepage-container .homepage-title-container {
+  width: auto;
+  padding: 40px 80px;
+}
+
+.homepage-container .homepage-title-container .homepage-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #a8d8ff;
+}
+
+.homepage-container .homepage-title-container .homepage-subtitle {
+  font-size: 1em;
+  font-weight: bold;
+  color: #ececec;
+}
+
+.homepage-container .homepage-title-container .homepage-location {
+  font-size: 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid #a8d8ff;
+  border-radius: 5px;
+  color: #a8d8ff;
+}
+
+.homepage-container .scene-one-container {
+  padding: 40px 80px;
+}
+/*# sourceMappingURL=HomePage.css.map */
