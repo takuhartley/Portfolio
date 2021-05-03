@@ -1,0 +1,27 @@
+{
+  "name": "robert_hartley_official_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server",
+    "server": "nodemon server/server",
+    "client": "npm start --prefix client",
+    "data:import": "node server/seeder",
+    "data:destroy": "node server/seeder -d",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobHart01/Portfolio.git"
+  },
+  "author": "Robert Taku Hartley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobHart01/Portfolio/issues"
+  },
+  "homepage": "https://github.com/RobHart01/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
