@@ -3,7 +3,7 @@ import React from 'react';
 
 // Styles
 import './BioPage.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const BioPage = () => {
 	return (

@@ -3,11 +3,11 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // Redux Imports
 import { useDispatch, useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Material UI Core
-import { Grid, Container } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+// import { Grid, Container } from '@material-ui/core';
+// import { makeStyles } from '@material-ui/core/styles';
 
 // Components
 import ProjectCard from './ProjectCard/ProjectCard';
@@ -21,16 +21,16 @@ import { listProjects } from '../../redux/actions/projectActions';
 import './ProjectPage.css';
 
 // Material UI Core
-const useStyles = makeStyles((theme) => ({
-	root: {
-		flexGrow: 1,
-	},
-	paper: {
-		padding: theme.spacing(2),
-		textAlign: 'center',
-		color: theme.palette.text.secondary,
-	},
-}));
+// const useStyles = makeStyles((theme) => ({
+// 	root: {
+// 		flexGrow: 1,
+// 	},
+// 	paper: {
+// 		padding: theme.spacing(2),
+// 		textAlign: 'center',
+// 		color: theme.palette.text.secondary,
+// 	},
+// }));
 // ----------------------------------------------------------------------------------------------------
 const ProjectPage = () => {
 	// Redux
@@ -41,7 +41,7 @@ const ProjectPage = () => {
 	// Decontructing animeDetails on Redux store
 	const { loading, error, projects } = projectList;
 
-	const classes = useStyles();
+	// const classes = useStyles();
 	// Effect
 	useEffect(() => {
 		dispatch(listProjects());
@@ -67,11 +67,11 @@ const ProjectPage = () => {
 									</li>
 									<li>
 										<Link to={'/project/new'}>
-											<FontAwesomeIcon
+											Icon {/* <FontAwesomeIcon
 												icon={['fal', 'plus-octagon']}
 												size="lg"
 												style={{ textDecoration: 'none' }}
-											/>
+											/> */}
 										</Link>
 									</li>
 								</ul>

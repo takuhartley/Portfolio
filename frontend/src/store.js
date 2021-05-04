@@ -25,7 +25,7 @@ const reducer = combineReducers({
 	userList: userListReducer,
 	userDetails: userDetailsReducer,
 	userUpdate: userUpdateReducer,
-	// Profile
+	// Project
 	projectCreate: projectCreateReducer,
 	projectList: projectListReducer,
 	projectDetails: projectDetailsReducer,
