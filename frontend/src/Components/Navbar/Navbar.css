@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 50vw;
+  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,7 +13,7 @@
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  padding: 0.5rem calc((100vw - 1000px) /2);
+  padding: 0.5rem calc((100vw - 1500px) /2);
   z-index: 10;
 }
 

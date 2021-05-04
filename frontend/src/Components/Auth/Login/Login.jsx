@@ -1,214 +1,214 @@
-// // Dependencies Imports
-// import React, { useState, useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { Link as RouterLink } from 'react-router-dom';
+// Dependencies Imports
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link as RouterLink } from 'react-router-dom';
 
-// import clsx from 'clsx';
+import clsx from 'clsx';
 
-// // Material UI Core Imports
-// // import { makeStyles } from '@material-ui/core/styles';
-// // import {
-// // 	Avatar,
-// // 	Button,
-// // 	TextField,
-// // 	FormControl,
-// // 	InputLabel,
-// // 	OutlinedInput,
-// // 	InputAdornment,
-// // 	IconButton,
-// // 	Link,
-// // 	Grid,
-// // 	Box,
-// // 	Typography,
-// // } from '@material-ui/core';
-// // import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-// // import Visibility from '@material-ui/icons/Visibility';
-// // import VisibilityOff from '@material-ui/icons/VisibilityOff';
+// Material UI Core Imports
+import { makeStyles } from '@material-ui/core/styles';
+import {
+	Avatar,
+	Button,
+	TextField,
+	FormControl,
+	InputLabel,
+	OutlinedInput,
+	InputAdornment,
+	IconButton,
+	Link,
+	Grid,
+	Box,
+	Typography,
+} from '@material-ui/core';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
-// // Components Imports
-// // import Message from '../Message/Message';
-// import Loader from '../../Loader/Loader';
+// Components Imports
+// import Message from '../Message/Message';
+import Loader from '../../Loader/Loader';
 
-// // Actions Imports
-// import { login } from '../../../redux/actions/userActions';
+// Actions Imports
+import { login } from '../../../redux/actions/userActions';
 
-// // Style
-// import './Login.css';
+// Style
+import './Login.css';
 
-// // Copy Right Function
-// function Copyright() {
-// 	return (
-// 		// <Typography variant="body2" color="textSecondary" align="center">
-// 		// 	{'Copyright © '}
-// 		// 	<RouterLink component={RouterLink} to="/">
-// 		// 		AnimeCenter
-// 		// 	</RouterLink>{' '}
-// 		// 	{new Date().getFullYear()}
-// 		// 	{'.'}{' '}
-// 		// </Typography>
-// 		null
-// 	);
-// }
+// Copy Right Function
+function Copyright() {
+	return (
+		// <Typography variant="body2" color="textSecondary" align="center">
+		// 	{'Copyright © '}
+		// 	<RouterLink component={RouterLink} to="/">
+		// 		AnimeCenter
+		// 	</RouterLink>{' '}
+		// 	{new Date().getFullYear()}
+		// 	{'.'}{' '}
+		// </Typography>
+		null
+	);
+}
 
-// // Material UI Core Styles
-// // const useStyles = makeStyles((theme) => ({
-// // 	root: {
-// // 		display: 'flex',
-// // 		flexWrap: 'wrap',
-// // 	},
-// // 	avatar: {
-// // 		margin: theme.spacing(1),
-// // 		backgroundColor: theme.palette.secondary.main,
-// // 	},
-// // 	form: {
-// // 		width: '100%', // Fix IE 11 issue.
-// // 		marginTop: theme.spacing(1),
-// // 		// border: '1px solid red',
-// // 	},
-// // 	submit: {
-// // 		margin: theme.spacing(3, 0, 2),
-// // 	},
-// // 	textField: {
-// // 		width: '100%',
-// // 	},
-// // }));
+// Material UI Core Styles
+const useStyles = makeStyles((theme) => ({
+	root: {
+		display: 'flex',
+		flexWrap: 'wrap',
+	},
+	avatar: {
+		margin: theme.spacing(1),
+		backgroundColor: theme.palette.secondary.main,
+	},
+	form: {
+		width: '100%', // Fix IE 11 issue.
+		marginTop: theme.spacing(1),
+		// border: '1px solid red',
+	},
+	submit: {
+		margin: theme.spacing(3, 0, 2),
+	},
+	textField: {
+		width: '100%',
+	},
+}));
 
-// const Login = ({ location, history }) => {
-// 	const [email, setEmail] = useState('');
-// 	const [password, setPassword] = useState('');
-// 	const [values, setValues] = useState({
-// 		showPassword: false,
-// 	});
+const Login = ({ location, history }) => {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [values, setValues] = useState({
+		showPassword: false,
+	});
 
-// 	// Redux
-// 	const dispatch = useDispatch();
-// 	const userLogin = useSelector((state) => state.userLogin);
+	// Redux
+	const dispatch = useDispatch();
+	const userLogin = useSelector((state) => state.userLogin);
 
-// 	// Decontructured userLogin data
-// 	const { loading, error, userInfo } = userLogin;
-// 	const redirect = location.search ? location.search.split('=')[1] : '/';
+	// Decontructured userLogin data
+	const { loading, error, userInfo } = userLogin;
+	const redirect = location.search ? location.search.split('=')[1] : '/';
 
-// 	// Showing Password
-// 	const handleClickShowPassword = () => {
-// 		setValues({ ...values, showPassword: !values.showPassword });
-// 	};
+	// Showing Password
+	const handleClickShowPassword = () => {
+		setValues({ ...values, showPassword: !values.showPassword });
+	};
 
-// 	// Prevent Mousedown Default Event
-// 	const handleMouseDownPassword = (event) => {
-// 		event.preventDefault();
-// 	};
+	// Prevent Mousedown Default Event
+	const handleMouseDownPassword = (event) => {
+		event.preventDefault();
+	};
 
-// 	const submitHandler = (e) => {
-// 		e.preventDefault();
-// 		dispatch(login(email, password));
-// 		//console.log(email, password);
-// 		// console.log('Redirection: ' + redirection);
-// 	};
+	const submitHandler = (e) => {
+		e.preventDefault();
+		dispatch(login(email, password));
+		//console.log(email, password);
+		// console.log('Redirection: ' + redirection);
+	};
 
-// 	// Google Auth
-// 	const handleLogin = async (googleData) => {
-// 		console.log(googleData);
-// 	};
+	// Google Auth
+	const handleLogin = async (googleData) => {
+		console.log(googleData);
+	};
 
-// 	// Material UI Core
-// 	// const classes = useStyles();
+	// Material UI Core
+	const classes = useStyles();
 
-// 	useEffect(() => {
-// 		if (userInfo) {
-// 			history.push(redirect);
-// 		}
-// 	}, [history, userInfo, redirect]);
+	useEffect(() => {
+		if (userInfo) {
+			history.push(redirect);
+		}
+	}, [history, userInfo, redirect]);
 
-// 	return (
-// 		<>
-// 			<div className="login_container">
-// 				<div className="login_card">
-// 					<div>{loading && <Loader />}</div>
-// 					<Avatar className={classes.avatar} style={{ textAlign: 'center', margin: '0 auto' }}>
-// 						<LockOutlinedIcon />
-// 					</Avatar>
+	return (
+		<>
+			<div className="login_container">
+				<div className="login_card">
+					<div>{loading && <Loader />}</div>
+					<Avatar className={classes.avatar} style={{ textAlign: 'center', margin: '0 auto' }}>
+						<LockOutlinedIcon />
+					</Avatar>
 
-// 					<Box>
-// 						<Typography
-// 							component="h1"
-// 							variant="h5"
-// 							style={{ textAlign: 'center', paddingTop: '10px', color: 'black' }}
-// 						>
-// 							Sign in
-// 						</Typography>
-// 					</Box>
+					<Box>
+						<Typography
+							component="h1"
+							variant="h5"
+							style={{ textAlign: 'center', paddingTop: '10px', color: 'black' }}
+						>
+							Sign in
+						</Typography>
+					</Box>
 
-// 					<form onSubmit={submitHandler} className={classes.form} noValidate>
-// 						<TextField
-// 							error={error ? true : false}
-// 							id="outlined-error-helper-text"
-// 							helperText={error}
-// 							variant="outlined"
-// 							margin="normal"
-// 							fullWidth
-// 							required
-// 							label="Email Address"
-// 							name="email"
-// 							autoComplete="email"
-// 							autoFocus
-// 							onChange={(e) => setEmail(e.target.value)}
-// 						/>
+					<form onSubmit={submitHandler} className={classes.form} noValidate>
+						<TextField
+							error={error ? true : false}
+							id="outlined-error-helper-text"
+							helperText={error}
+							variant="outlined"
+							margin="normal"
+							fullWidth
+							required
+							label="Email Address"
+							name="email"
+							autoComplete="email"
+							autoFocus
+							onChange={(e) => setEmail(e.target.value)}
+						/>
 
-// 						<FormControl className={clsx(classes.textField, classes.form)} variant="outlined">
-// 							<InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-// 							<OutlinedInput
-// 								id="outlined-adornment-password"
-// 								type={values.showPassword ? 'text' : 'password'}
-// 								value={values.password}
-// 								onChange={(e) => setPassword(e.target.value)}
-// 								endAdornment={
-// 									<InputAdornment position="end">
-// 										<IconButton
-// 											aria-label="toggle password visibility"
-// 											onClick={handleClickShowPassword}
-// 											onMouseDown={handleMouseDownPassword}
-// 											edge="end"
-// 										>
-// 											{values.showPassword ? <Visibility /> : <VisibilityOff />}
-// 										</IconButton>
-// 									</InputAdornment>
-// 								}
-// 								labelWidth={70}
-// 								fullWidth
-// 							/>
-// 						</FormControl>
+						<FormControl className={clsx(classes.textField, classes.form)} variant="outlined">
+							<InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+							<OutlinedInput
+								id="outlined-adornment-password"
+								type={values.showPassword ? 'text' : 'password'}
+								value={values.password}
+								onChange={(e) => setPassword(e.target.value)}
+								endAdornment={
+									<InputAdornment position="end">
+										<IconButton
+											aria-label="toggle password visibility"
+											onClick={handleClickShowPassword}
+											onMouseDown={handleMouseDownPassword}
+											edge="end"
+										>
+											{values.showPassword ? <Visibility /> : <VisibilityOff />}
+										</IconButton>
+									</InputAdornment>
+								}
+								labelWidth={70}
+								fullWidth
+							/>
+						</FormControl>
 
-// 						<Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-// 							Sign In
-// 						</Button>
+						<Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+							Sign In
+						</Button>
 
-// 						<Grid container>
-// 							<Grid item xs>
-// 								<Link component={RouterLink} to="/login" color="secondary" variant="inherit">
-// 									Forgot password?
-// 								</Link>
-// 							</Grid>
+						<Grid container>
+							<Grid item xs>
+								<Link component={RouterLink} to="/login" color="secondary" variant="inherit">
+									Forgot password?
+								</Link>
+							</Grid>
 
-// 							<Grid item>
-// 								<Link
-// 									component={RouterLink}
-// 									to={redirect ? `/register?redirect=${redirect}` : '/register'}
-// 								>
-// 									Don't have an account? Sign up
-// 								</Link>
-// 							</Grid>
-// 						</Grid>
-// 					</form>
-// 				</div>
-// 				<Box mt={8}>
-// 					<Copyright />
-// 				</Box>
-// 			</div>
-// 		</>
-// 	);
-// };
+							<Grid item>
+								<Link
+									component={RouterLink}
+									to={redirect ? `/register?redirect=${redirect}` : '/register'}
+								>
+									Don't have an account? Sign up
+								</Link>
+							</Grid>
+						</Grid>
+					</form>
+				</div>
+				<Box mt={8}>
+					<Copyright />
+				</Box>
+			</div>
+		</>
+	);
+};
 
-// export default Login;
+export default Login;
 
 // // export default function AuthExample() {
 // // 	return (

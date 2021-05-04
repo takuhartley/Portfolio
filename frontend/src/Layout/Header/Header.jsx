@@ -27,7 +27,7 @@ const Header = () => {
 			<section className="header-container">
 				<header>
 					<div className="logo">
-						<Link to={'/'}>R.T.H</Link>
+						<Link to={'/'}>Robert Hartley</Link>
 					</div>
 					<div className="toggle" onClick={onClickHandler}>
 						<Hamburger label="Show menu" rounded toggled={isOpen} toggle={setOpen} />

@@ -1,6 +1,6 @@
 .homepage-container {
-  height: auto;
-  background-color: #1b1b1b;
+  height: 100vh;
+  background-color: #0080ff;
 }
 
 .homepage-container .homepage-title-container {
@@ -9,26 +9,16 @@
 }
 
 .homepage-container .homepage-title-container .homepage-title {
-  font-size: 2em;
+  font-size: 4em;
   font-weight: bold;
-  color: #a8d8ff;
+  color: #f0ffff;
+  letter-spacing: 0.125em;
 }
 
 .homepage-container .homepage-title-container .homepage-subtitle {
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
-  color: #ececec;
-}
-
-.homepage-container .homepage-title-container .homepage-location {
-  font-size: 1em;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 5px;
-  border: 1px solid #a8d8ff;
-  border-radius: 5px;
-  color: #a8d8ff;
+  color: #f0ffff;
 }
 
 .homepage-container .scene-one-container {

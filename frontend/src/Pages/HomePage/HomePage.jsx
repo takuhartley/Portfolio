@@ -8,13 +8,15 @@ const Homepage = () => {
 		<>
 			<div className="homepage-container">
 				<div className="homepage-title-container">
-					<p className="homepage-title">Hi there 👋🏼 I'm Robbie</p>
-					<p className="homepage-subtitle">Full Stack Engineer/Agile IT Business Analyst</p>
-					<p className="homepage-location">Based in Tokyo</p>
+					<p className="homepage-title">
+						Greetings, <span>I'm Robert</span>
+					</p>
+					<p className="homepage-subtitle">
+						I'm a Front-End Developer/Agile IT Business Analyst currently based in Tokyo Japan
+					</p>
+					<div className="homepage-location"></div>
 				</div>
-				<div className="scene-one-container">
-					{/* <CarVisuals /> */}
-				</div>
+				<div className="scene-one-container">{/* <CarVisuals /> */}</div>
 			</div>
 		</>
 	);
