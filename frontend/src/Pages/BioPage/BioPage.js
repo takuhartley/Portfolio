@@ -28,7 +28,6 @@ const BioPage = () => {
 					<div className="bio-page-second-body">
 						<hr />
 						<h3>When I'm not programming...</h3>
-						<hr />
 						<p>
 							I kind of don't have a life 😔, jkjk haha I have a few main interests that I like exploring
 							further on. In reality I have too many interests to keep track of so it's nice to have them
@@ -54,11 +53,9 @@ const BioPage = () => {
 					<div className="bio-page-second-body">
 						<hr />
 						<h3>✨ Professional Interests ✨</h3>
-						<hr />
 						<p>
 							I have a bunch of career related interests which mainly manifests in the form of occassional
-							weekend book binges. Or you might start to see my work here on the Blog Page once it's set
-							up.
+							weekend book binges. Or you might start to see my work here on the Blog Page.
 						</p>
 						<ul>
 							<li>🏘️ International Real Estate Investment Strategies</li>

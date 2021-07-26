@@ -5,16 +5,9 @@ const backEnd = ['bcryptjs', 'express', 'jsonwebtoken', 'mongoose'];
 const dataBase = ['MongoDB'];
 const stateManagement = ['redux', 'redux-devtools-extension', 'redux-thunk'];
 
-const loop = (arr) => {
-	for (let i in arr.length) {
-		i++;
-		return arr[i];
-	}
-};
-
 const projectData = [
 	{
-		_id:  1,
+		_id: 1,
 		title: 'Anitime',
 		sub_title: 'A mobile responsive SPA for Anime Enthusiasts',
 		description: 'Want to be part of a community of anime enthusiests & join discussions or share opinions?',
