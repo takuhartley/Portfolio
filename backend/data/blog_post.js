@@ -9,12 +9,12 @@ const blog_posts = [
 		description: 'This is a text description',
 		// There should only be 1 link to the website
 		links: [],
-		images: {
+		images: [{
 			thumbnail: 'image',
 			icon: 'image2',
 			header: 'image3',
 			additional: [],
-		},
+		}],
 	},
 	{
 		_id: '2',
