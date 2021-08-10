@@ -49,13 +49,13 @@ const ProjectPage = () => {
 
 	return (
 		<>
-			<div>
+			<div className="project-container">
 				{loading ? (
 					<Loader />
 				) : error ? (
 					<Message variant="error">{error}</Message>
 				) : (
-					<div className="project-container">
+					<div className="project-content">
 						<div className="project-page-title">
 							<p className="linear-wipe">Check out my projects idk</p>
 						</div>
@@ -67,7 +67,8 @@ const ProjectPage = () => {
 									</li>
 									<li>
 										<Link to={'/project/new'}>
-											I{/* <FontAwesomeIcon
+											I
+											{/* <FontAwesomeIcon
 												icon={['fal', 'plus-octagon']}
 												size="lg"
 												style={{ textDecoration: 'none' }}

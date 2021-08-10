@@ -18,34 +18,37 @@ const ProjectSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	images: {
-		headerImage: {
-			type: String,
-		},
-		mainImage: {
-			type: String,
-		},
-		subImage: {
-			type: String,
-		},
-		imageCollection: [],
-	},
-	privateStatus: {
+	published: {
 		type: Boolean,
-		default: true,
+		default: false,
+		required: true,
+		lowercase: true,
 	},
 	technologies: {
-		stack: { type: String },
-		language: { type: [String] },
-		framework: { type: [String] },
-		database: { type: [String] },
-		stateManagement: { type: [String] },
-		other: { type: [String] },
+		language: { type: String },
+		framework: { type: String },
+		library: { type: String },
+		database: { type: String },
+		stateManagement: { type: String },
+		other: [{ type: String }],
 	},
-	links: {
-		gitHub: { type: String },
-		URL: { type: String },
+	images: {
+		thumbnail: {
+			name: { type: String },
+			image: { type: String },
+		},
+		icon: {
+			name: { type: String },
+			image: { type: String },
+		},
+		articleContent: [],
 	},
+	links: [
+		{
+			website: { type: String },
+			websiteUrl: { type: String },
+		},
+	],
 });
 // ----------------------------------------------------------------------------------------------------
 const Project = mongoose.model('Project', ProjectSchema);

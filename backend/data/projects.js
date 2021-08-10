@@ -1,77 +1,75 @@
-import bcrypt from 'bcryptjs';
-
 const projects = [
 	{
-		_id: '1',
-		technologies: {
-			language: ['JavaScript', 'TypeScript', 'HTML', 'CSS'],
-			framework: ['React'],
-			database: ['MongoDB'],
-			stateManagement: ['Redux'],
-			other: ['Mongoose', 'Express', 'Node'],
-		},
-		// The privacy of the project post = published or unpublished
-		published: false,
-		user: '601ba47219228de1805b3b5e',
 		title: 'Portfolio Website',
 		subTitle: 'Multi-purpose personal portfolio website',
-		description: "This website was created, with the idea of my own growth. I've had a w...",
-		// There should only be 1 link to the website
-		links: 'google.com',
-		images: {
-			thumbnail: 'image',
-			icon: 'image2',
-			header: 'image3',
-			additional: [],
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum placerat arcu turpis. Fusce arcu diam, sollicitudin ut nulla non, pellentesque volutpat velit. Pellentesque vitae enim non risus convallis varius ut vitae ante. Curabitur rutrum laoreet sem a ullamcorper. Fusce velit felis, tempor eget porta non, ultricies eget ligula.',
+		published: true,
+		technologies: {
+			language: 'JavaScript',
+			framework: 'React',
+			library: 'Anime.js',
+			database: 'MongoDB',
+			stateManagement: 'Redux',
+			other: ['Mongoose', 'Express', 'Node'],
 		},
+		images: {
+			thumbnail: {
+				name: 'Portfolio Thumbnail',
+				image: '/images/portfolio-website-thumbnail',
+			},
+			icon: {
+				name: 'Portfolio Icon',
+				image: '/images/portfolio-website-icon',
+			},
+			articleContent: ['/images/p-a-c-1', '/images/p-a-c-2'],
+		},
+		links: [
+			{
+				website: 'Google',
+				websiteUrl: 'https://google.com',
+			},
+			{
+				website: 'Github',
+				websiteUrl: 'https://github.com',
+			},
+		],
 	},
 	{
-		_id: '2',
+		title: 'Anime Website',
+		subTitle: 'Multi-purpose personal Anime website',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum placerat arcu turpis. Fusce arcu diam, sollicitudin ut nulla non, pellentesque volutpat velit. Pellentesque vitae enim non risus convallis varius ut vitae ante. Curabitur rutrum laoreet sem a ullamcorper. Fusce velit felis, tempor eget porta non, ultricies eget ligula.',
+		published: true,
 		technologies: {
-			language: ['JavaScript', 'TypeScript', 'HTML', 'CSS'],
-			framework: ['React'],
-			database: ['MongoDB'],
-			stateManagement: ['Redux'],
+			language: 'JavaScript',
+			framework: 'React',
+			library: 'Anime.js',
+			database: 'MongoDB',
+			stateManagement: 'Redux',
 			other: ['Mongoose', 'Express', 'Node'],
 		},
-		// The privacy of the project post = published or unpublished
-		published: false,
-		user: '601ba47219228de1805b3b5e',
-		title: 'Portfolio Website',
-		subTitle: 'Multi-purpose personal portfolio website',
-		description: "This website was created, with the idea of my own growth. I've had a w...",
-		// There should only be 1 link to the website
-		links: 'google.com',
 		images: {
-			thumbnail: 'image',
-			icon: 'image2',
-			header: 'image3',
-			additional: [],
+			thumbnail: {
+				name: 'Anime Thumbnail',
+				image: '/images/anime-website-thumbnail',
+			},
+			icon: {
+				name: 'Anime Icon',
+				image: '/images/anime-website-icon',
+			},
+			articleContent: ['/images/p-a-c-1', '/images/p-a-c-2'],
 		},
-	},
-	{
-		_id: '3',
-		technologies: {
-			language: ['JavaScript', 'TypeScript', 'HTML', 'CSS'],
-			framework: ['React'],
-			database: ['MongoDB'],
-			stateManagement: ['Redux'],
-			other: ['Mongoose', 'Express', 'Node'],
-		},
-		// The privacy of the project post = published or unpublished
-		published: false,
-		user: '601ba47219228de1805b3b5e',
-		title: 'Portfolio Website',
-		subTitle: 'Multi-purpose personal portfolio website',
-		description: "This website was created, with the idea of my own growth. I've had a w...",
-		// There should only be 1 link to the website
-		links: 'google.com',
-		images: {
-			thumbnail: 'image',
-			icon: 'image2',
-			header: 'image3',
-			additional: [],
-		},
+		links: [
+			{
+				website: 'Google',
+				websiteUrl: 'https://google.com',
+			},
+			{
+				website: 'Github',
+				websiteUrl: 'https://github.com',
+			},
+		],
 	},
 ];
 

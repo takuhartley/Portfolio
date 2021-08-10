@@ -1,4 +1,10 @@
 .project-container {
+  height: auto;
+  width: 100%;
+  margin: 0;
+}
+
+.project-container .project-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,14 +15,11 @@
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  height: auto;
-  width: 100%;
-  margin: 0;
   padding: 0 20%;
   background-color: #cecece;
 }
 
-.project-container .project-page-title {
+.project-container .project-content .project-page-title {
   height: 40vh;
   width: auto;
   text-align: center;
@@ -33,14 +36,14 @@
           align-items: center;
 }
 
-.project-container .project-page-title p {
+.project-container .project-content .project-page-title p {
   margin: 0;
   font-size: 2em;
   font-weight: bold;
   color: #659977;
 }
 
-.project-container .project-navigation ul {
+.project-container .project-content .project-navigation ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,7 +51,7 @@
       justify-content: space-around;
 }
 
-.project-container .project-navigation ul li {
+.project-container .project-content .project-navigation ul li {
   border: 2px solid white;
   padding: 0.5em;
   list-style: none;
@@ -57,12 +60,12 @@
   background-color: white;
 }
 
-.project-container .project-navigation ul li a {
+.project-container .project-content .project-navigation ul li a {
   cursor: pointer;
   text-decoration: none;
 }
 
-.project-container .project-page-row {
+.project-container .project-content .project-page-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
