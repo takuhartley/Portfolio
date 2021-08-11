@@ -12,11 +12,15 @@ import Loader from '../../../Components/Loader/Loader';
 const ProjectDetailsPage = ({ match }) => {
 	const dispatch = useDispatch();
 	const projectDetails = useSelector((state) => state.projectDetails);
-	const userLogin = useSelector((state) => state.userLogin);
-	const { userInfo } = userLogin;
 	const { loading, error, project } = projectDetails;
-	//const mainImage = project.images.main;
 
+	useEffect(() => {
+		if (!project._id || project._id !== match.params.id) {
+			dispatch(getProjectDetails(match.params.id));
+		}
+	}, [dispatch, match, project._id]);
+	const { title, subTitle, published, description } = project;
+	//<div className="project-thumbnail-image" style={{ backgroundImage: `url(${project.images.thumbnail.image})` }}></div>
 	return (
 		<>
 			<div className="project-details-page-container">
@@ -28,18 +32,18 @@ const ProjectDetailsPage = ({ match }) => {
 					<>
 						<div className="project-details-page-link">
 							<RouterLink to="/projects">Back</RouterLink>
-							{userInfo ? <RouterLink to={`/project/${match.params.id}/edit`}>Edit</RouterLink> : null}
 						</div>
 						<div className="project-details-page-title">
-							<p>{project.title}</p>
+							<p>{title}</p>
 						</div>
 						<div className="project-details-page-subTitle">
-							<p>{project.subTitle}</p>
+							<p>{subTitle}</p>
 						</div>
-						<div className="project-details-page-image"></div>
-
 						<div className="project-details-page-description">
-							<p>{project.description}</p>
+							<p>{description}</p>
+						</div>
+						<div className="project-details-page-published">
+							<p>{published}</p>
 						</div>
 					</>
 				)}

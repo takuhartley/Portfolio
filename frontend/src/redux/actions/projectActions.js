@@ -88,7 +88,7 @@ export const listProjects = () => async (dispatch) => {
 			type: PROJECT_LIST_REQUEST,
 		});
 
-		const { data } = await axios.get(`/api/projects`);
+		const { data } = await axios.get('/api/projects');
 
 		dispatch({
 			type: PROJECT_LIST_SUCCESS,

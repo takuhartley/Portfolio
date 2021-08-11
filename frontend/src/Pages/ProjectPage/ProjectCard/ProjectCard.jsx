@@ -84,6 +84,7 @@ function Card({ children }) {
 	);
 }
 const ProjectCard = ({ project }) => {
+	console.log(project._id);
 	const technologies = project.technologies.framework[0];
 	const language = project.technologies.language[0];
 	return (

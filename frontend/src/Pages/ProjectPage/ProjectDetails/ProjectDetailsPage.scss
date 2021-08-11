@@ -1,9 +1,16 @@
 .project-details-page-container {
+    border: 1px dotted red;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: auto;
     width: auto;
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(90, 90, 90);
+
+    .project-thumbnail-image {
+        width: 100vw;
+        border: 1px dotted rgb(0, 17, 255);
+        height: 720;
+    }
 
     .project-details-page-link {
 

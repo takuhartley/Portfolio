@@ -55,6 +55,9 @@ const Navbar = () => {
 								<Link to={`/logout`} className="navbar-links" onClick={logoutHandler}>
 									Logout
 								</Link>
+								<Link to={`/admin/dashboard`} className="navbar-links">
+									Dashboard
+								</Link>
 							</li>
 						) : null}
 					</ul>

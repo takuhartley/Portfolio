@@ -1,9 +1,16 @@
 .project-details-page-container {
+  border: 1px dotted red;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: auto;
   width: auto;
-  background-color: #dddddd;
+  background-color: #5a5a5a;
+}
+
+.project-details-page-container .project-thumbnail-image {
+  width: 100vw;
+  border: 1px dotted #0011ff;
+  height: 720;
 }
 
 .project-details-page-container .project-details-page-link a {

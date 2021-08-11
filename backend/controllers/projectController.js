@@ -108,9 +108,9 @@ const getProjectById = asyncHandler(async (req, res) => {
 	}
 });
 // ----------------------------------------------------------------------------------------------------
-// @desc    Delete user
-// @route   DELETE /api/users/:id
-// @access  Private/Admin
+// @desc    Find all Projects
+// @route   DELETE /api/projects
+// @access  Public
 const getAllProjects = asyncHandler(async (req, res) => {
 	try {
 		const projects = await Project.find({});

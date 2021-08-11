@@ -1,58 +1,55 @@
 .project-container {
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1 0 auto;
     width: 100%;
     margin: 0;
-    
-    .project-content {
+    padding: 0 20%;
+    background-color: #000000;
+
+    .project-page-title {
+        height: 40vh;
+        width: auto;
+        text-align: center;
+        margin: 0 auto;
+        position: relative;
         display: flex;
-        flex-direction: column;
-        flex: 1 0 auto;
-        padding: 0 20%;
-        background-color: #cecece;
+        justify-content: center;
+        align-items: center;
 
-        .project-page-title {
-            height: 40vh;
-            width: auto;
-            text-align: center;
-            margin: 0 auto;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            p {
-                margin: 0;
-                font-size: 2em;
-                font-weight: bold;
-                color: #659977;
-            }
-
+        p {
+            margin: 0;
+            font-size: 2em;
+            font-weight: bold;
+            color: #659977;
         }
 
-        .project-navigation {
-            ul {
-                display: flex;
-                justify-content: space-around;
+    }
 
-                li {
-                    border: 2px solid white;
-                    padding: 0.5em;
-                    list-style: none;
-                    margin: 0.5em;
-                    border-radius: 1em;
-                    background-color: white;
+    .project-navigation {
+        ul {
+            display: flex;
+            justify-content: space-around;
 
-                    a {
-                        cursor: pointer;
-                        text-decoration: none;
-                    }
+            li {
+                border: 2px solid white;
+                padding: 0.5em;
+                list-style: none;
+                margin: 0.5em;
+                border-radius: 1em;
+                background-color: white;
+
+                a {
+                    cursor: pointer;
+                    text-decoration: none;
                 }
             }
         }
+    }
 
-        .project-page-row {
-            display: flex;
-            flex-wrap: wrap;
-        }
+    .project-page-row {
+        display: flex;
+        flex-wrap: wrap;
     }
 }
