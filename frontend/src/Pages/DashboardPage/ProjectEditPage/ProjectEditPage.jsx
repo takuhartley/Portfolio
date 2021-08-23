@@ -9,6 +9,16 @@ import FormContainer from '../../../Components/FormContainer';
 import { getProjectDetails, updateProject } from '../../../redux/actions/projectActions';
 import { PROJECT_UPDATE_RESET } from '../../../redux/constants/projectConstants';
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import {
+	FormControl,
+	Input,
+	InputLabel,
+	Container,
+	Checkbox,
+	Switch,
+	FormGroup,
+	FormControlLabel,
+} from '@material-ui/core';
 
 const ProjectEditPage = ({ match, history }) => {
 	// Get the Project ID
@@ -101,126 +111,122 @@ const ProjectEditPage = ({ match, history }) => {
 			setUploading(false);
 		}
 	};
-
+	const handleChange = (e) => {
+		setPublished({ published: !e.target.checked });
+	};
 	return (
-		<>
-			<Link to={`/project/${projectId}`} className="edit-project-link">
-				Go Back
-			</Link>
-			<FormContainer>
-				<h1>Edit {project.title}</h1>
-				{loadingUpdate && <Loader />}
-				{errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
-				{loading ? (
-					<Loader />
-				) : error ? (
-					<Message variant="danger">{error}</Message>
-				) : (
-					<Form onSubmit={submitHandler}>
-						<Row>
-							<Col>
-								<Form.Group controlId="title">
-									<Form.Label>Title</Form.Label>
-									<Form.Control
-										type="title"
-										placeholder="Enter title"
-										value={title}
-										onChange={(e) => setTitle(e.target.value)}
-									></Form.Control>
-								</Form.Group>
-							</Col>
-							<Col>
-								<Form.Group controlId="subtitle">
-									<Form.Label>Sub-Title</Form.Label>
-									<Form.Control
-										type="subTitle"
-										placeholder="Enter Sub-Title"
-										value={subTitle}
-										onChange={(e) => setSubTitle(e.target.value)}
-									></Form.Control>
-								</Form.Group>
-							</Col>
-						</Row>
-						<Form.Group controlId="description">
-							<Form.Label>Description</Form.Label>
-							<Form.Control
-								type="text-field"
-								as="textarea"
-								rows={3}
-								placeholder="Enter Description"
-								value={description}
-								onChange={(e) => setDescription(e.target.value)}
-							></Form.Control>
-						</Form.Group>
-						<Form.Group controlId="exampleForm.ControlSelect1">
-							<Form.Label>Stack</Form.Label>
-							<Form.Control as="select">
-								<option>{stack}</option>
-								<option>MERN</option>
-								<option>MEAN</option>
-								<option>Vue</option>
-								<option>Django</option>
-								<option>C#</option>
-							</Form.Control>
-						</Form.Group>
-						<Form.Group controlId="published">
-							<Form.Switch
-								type="switch"
-								id="custom-switch"
-								label="Private"
-								checked={privateStatus}
-								onChange={(e) => setPrivateStatus(e.target.checked)}
+		<div className="project_edit_page">
+			<Container maxWidth="md">
+				<Link to={`/project/${projectId}`} className="edit-project-link">
+					Go Back
+				</Link>
+
+				<FormContainer>
+					<h1>Edit "{project.title}"</h1>
+					{loadingUpdate && <Loader />}
+					{errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
+					{loading ? (
+						<Loader />
+					) : error ? (
+						<Message variant="danger">{error}</Message>
+					) : (
+						<Form onSubmit={submitHandler}>
+							<FormGroup controlId="title">
+								<InputLabel>Title</InputLabel>
+								<Input
+									type="title"
+									placeholder="Enter title"
+									value={title}
+									onChange={(e) => setTitle(e.target.value)}
+								></Input>
+							</FormGroup>
+
+							<FormGroup controlId="subtitle">
+								<InputLabel>Sub-Title</InputLabel>
+								<Input
+									type="subTitle"
+									placeholder="Enter Sub-Title"
+									value={subTitle}
+									onChange={(e) => setSubTitle(e.target.value)}
+								></Input>
+							</FormGroup>
+
+							<FormGroup controlId="description">
+								<InputLabel>Description</InputLabel>
+								<Input
+									type="text-field"
+									as="textarea"
+									rows={3}
+									placeholder="Enter Description"
+									value={description}
+									onChange={(e) => setDescription(e.target.value)}
+								></Input>
+							</FormGroup>
+							<FormGroup controlId="exampleInputSelect1">
+								<InputLabel>Stack</InputLabel>
+								<Input as="select">
+									<option>{stack}</option>
+									<option>MERN</option>
+									<option>MEAN</option>
+									<option>Vue</option>
+									<option>Django</option>
+									<option>C#</option>
+								</Input>
+							</FormGroup>
+							<FormControlLabel
+								control={<Switch checked={published} onChange={handleChange} name="published" />}
+								label="Publish"
 							/>
-						</Form.Group>
-						<Form.Group controlId="published">
-							<Form.Check
-								type="checkbox"
-								label="Published"
-								checked={published}
-								onChange={(e) => setPublished(e.target.checked)}
-							></Form.Check>
-						</Form.Group>
-						<Form.Group controlId="links">
-							<Form.Label>GitHub Link</Form.Label>
-							<Form.Control
-								type="text"
-								placeholder="Enter Github Link"
-								value={gitHub}
-								onChange={(e) => setGitHub(e.target.value)}
-							></Form.Control>
-						</Form.Group>
-						<Form.Group controlId="subtitle">
-							<Form.Label>URL</Form.Label>
-							<Form.Control
-								type="text"
-								placeholder="Enter URL"
-								value={url}
-								onChange={(e) => setUrl(e.target.value)}
-							></Form.Control>
-						</Form.Group>
-						<Form.Group controlId="image">
-							<Form.Label>Image</Form.Label>
-							<Form.Control
-								type="text"
-								placeholder="Enter image url"
-								value={image}
-								onChange={(e) => setImage(e.target.value)}
-							></Form.Control>
-							<Form.File
-								id="image-file"
-								label="Choose File"
-								custom
-								onChange={uploadFileHandler}
-							></Form.File>
-							{uploading && <Loader />}
-						</Form.Group>
-						<Button type="submit" variant="primary">
-							Update
-						</Button>
-					</Form>
-				)}
-			</FormContainer>
-		</>
+							<FormGroup controlId="published">
+								<Form.Check
+									type="checkbox"
+									label="Published"
+									checked={published}
+									onChange={(e) => setPublished(e.target.checked)}
+								></Form.Check>
+							</FormGroup>
+							<FormGroup controlId="links">
+								<InputLabel>GitHub Link</InputLabel>
+								<Input
+									type="text"
+									placeholder="Enter Github Link"
+									value={gitHub}
+									onChange={(e) => setGitHub(e.target.value)}
+								></Input>
+							</FormGroup>
+							<FormGroup controlId="subtitle">
+								<InputLabel>URL</InputLabel>
+								<Input
+									type="text"
+									placeholder="Enter URL"
+									value={url}
+									onChange={(e) => setUrl(e.target.value)}
+								></Input>
+							</FormGroup>
+							<FormGroup controlId="image">
+								<InputLabel>Image</InputLabel>
+								<Input
+									type="text"
+									placeholder="Enter image url"
+									value={image}
+									onChange={(e) => setImage(e.target.value)}
+								></Input>
+								<Form.File
+									id="image-file"
+									label="Choose File"
+									custom
+									onChange={uploadFileHandler}
+								></Form.File>
+								{uploading && <Loader />}
+							</FormGroup>
+							<Button type="submit" variant="primary">
+								Update
+							</Button>
+						</Form>
+					)}
+				</FormContainer>
+			</Container>
+		</div>
 	);
 };
 

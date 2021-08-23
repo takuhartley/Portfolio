@@ -9,7 +9,16 @@ import { createProject } from '../../../redux/actions/projectActions';
 // import { PROJECT_CREATE_RESET } from '../../../redux/constants/projectConstants';
 import Loader from '../../../Components/Loader/Loader';
 // Material UI
-import { FormControl, Input, InputLabel, Container, Checkbox, FormGroup, FormControlLabel } from '@material-ui/core';
+import {
+	FormControl,
+	Input,
+	InputLabel,
+	Container,
+	Checkbox,
+	Switch,
+	FormGroup,
+	FormControlLabel,
+} from '@material-ui/core';
 
 const ProjectCreatePage = ({ location, history }) => {
 	const [title, setTitle] = useState('');
@@ -21,8 +30,12 @@ const ProjectCreatePage = ({ location, history }) => {
 	const [framework, setFramework] = useState('');
 	const [language, setLanguage] = useState([]);
 	const [database, setDatabase] = useState('');
-	const [stateManagement, setStateManagement] = useState('')
+	const [stateManagement, setStateManagement] = useState('');
 	const [uploading, setUploading] = useState(false);
+	const [state, setState] = useState({
+		checkedA: true,
+		checkedB: true,
+	});
 
 	// Dispatch Redux
 	const dispatch = useDispatch();
@@ -43,7 +56,6 @@ const ProjectCreatePage = ({ location, history }) => {
 				framework,
 				database,
 				stateManagement,
-				
 			})
 		);
 		if (success) {
@@ -52,6 +64,10 @@ const ProjectCreatePage = ({ location, history }) => {
 	};
 	const handleChange = (e) => {
 		setPublished({ published: !e.target.checked });
+	};
+
+	const handleSwitchChange = (event) => {
+		setState({ ...state, [event.target.name]: event.target.checked });
 	};
 
 	const uploadFileHandler = async (e) => {
@@ -82,6 +98,7 @@ const ProjectCreatePage = ({ location, history }) => {
 				<Link to={'/admin/dashboard'} className="edit-project-link">
 					Go Back
 				</Link>
+
 				<FormContainer>
 					<h1>Add Project Data</h1>
 					<Form onSubmit={submitHandler}>
@@ -127,96 +144,9 @@ const ProjectCreatePage = ({ location, history }) => {
 							/>
 						</FormControl>
 						<FormControlLabel
-							control={
-								<Checkbox id="published" checked={published} onChange={handleChange} color="primary" />
-							}
-							label="Primary"
+							control={<Switch checked={published} onChange={handleChange} name="published" />}
+							label="Publish"
 						/>
-
-						<FormControl>
-							<InputLabel required htmlFor="published">
-								private
-							</InputLabel>
-							<Input
-								id="description"
-								placeholder="enter description"
-								autoComplete
-								color="primary"
-								multiline
-								rows="10"
-								value={description}
-								onChange={(e) => setDescription(e.target.value)}
-							/>
-						</FormControl>
-
-						<Form.Group controlId="stack">
-							<Form.Label>Stack</Form.Label>
-							<Form.Control as="select" onChange={(e) => setStack(e.target.value)}>
-								<option>Please select one...</option>
-								<option>MERN</option>
-								<option>MEAN</option>
-								<option>Vue</option>
-								<option>Django</option>
-								<option>C#</option>
-							</Form.Control>
-						</Form.Group>
-
-						<Form.Group controlId="framework">
-							<Form.Label>Framework</Form.Label>
-							<Form.Control
-								type=""
-								placeholder="Enter Framework"
-								value={framework}
-								onChange={(e) => setFramework(e.target.value)}
-							></Form.Control>
-						</Form.Group>
-
-						<Form.Group controlId="language">
-							<Form.Label>Langauge</Form.Label>
-							<Form.Control
-								type=""
-								placeholder="Enter Language"
-								value={language}
-								onChange={(e) => setLanguage(e.target.value)}
-							></Form.Control>
-						</Form.Group>
-
-						<Form.Group controlId="database">
-							<Form.Label>Database</Form.Label>
-							<Form.Control
-								type=""
-								placeholder="Enter Database"
-								value={database}
-								onChange={(e) => setDatabase(e.target.value)}
-							></Form.Control>
-						</Form.Group>
-
-						<Form.Group controlId="stateManagement">
-							<Form.Label>State Management</Form.Label>
-							<Form.Control
-								type=""
-								placeholder="Enter State Management"
-								value={stateManagement}
-								onChange={(e) => setStateManagement(e.target.value)}
-							></Form.Control>
-						</Form.Group>
-
-						<Form.Group controlId="image">
-							<Form.Label>Image</Form.Label>
-							<Form.Control
-								type="text"
-								placeholder="Enter image url"
-								value={image}
-								onChange={(e) => setImage(e.target.value)}
-							></Form.Control>
-							<Form.File
-								id="image-file"
-								label="Choose File"
-								custom
-								onChange={uploadFileHandler}
-							></Form.File>
-							{uploading && <Loader />}
-						</Form.Group>
 
 						<Button type="submit" variant="primary">
 							Submit
