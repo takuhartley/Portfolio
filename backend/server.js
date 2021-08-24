@@ -14,6 +14,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 // Routes (Import):
 import userRoutes from './routes/userRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
+import uploadRoutes from './routes/uploadRoutes.js'
 // ----------------------------------------------------------------------------------------------------
 dotenv.config();
 // ----------------------------------------------------------------------------------------------------

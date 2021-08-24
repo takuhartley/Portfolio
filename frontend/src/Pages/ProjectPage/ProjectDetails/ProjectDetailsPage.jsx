@@ -36,9 +36,7 @@ const ProjectDetailsPage = ({ match }) => {
             </div>
             <div className="project-details-page-title">
               <p>
-                {images.map((image) => (
-                  <div>{image.thumbnail}</div>
-                ))}
+                
               </p>
             </div>
             <div className="project-details-page-title">

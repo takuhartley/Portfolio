@@ -36,6 +36,7 @@ const ProjectCreatePage = ({ location, history }) => {
 		checkedA: true,
 		checkedB: true,
 	});
+	const [components, setComponents] = useState([]);
 
 	// Dispatch Redux
 	const dispatch = useDispatch();
@@ -90,6 +91,9 @@ const ProjectCreatePage = ({ location, history }) => {
 			console.error(error);
 			setUploading(false);
 		}
+	};
+	const handleClick = (e) => {
+		console.log('clicked bitch');
 	};
 
 	return (
@@ -147,6 +151,62 @@ const ProjectCreatePage = ({ location, history }) => {
 							control={<Switch checked={published} onChange={handleChange} name="published" />}
 							label="Publish"
 						/>
+						<button onClick={handleClick()}>+</button>
+						<FormControl>
+							<InputLabel required htmlFor="language">
+								Language Used
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="framework">
+								Framework Used
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="description">
+								Library
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="description">
+								description
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="description">
+								description
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="description">
+								description
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="description">
+								description
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="description">
+								description
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="description">
+								description
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="description">
+								description
+							</InputLabel>
+						</FormControl>
+						<FormControl>
+							<InputLabel required htmlFor="description">
+								description
+							</InputLabel>
+						</FormControl>
 
 						<Button type="submit" variant="primary">
 							Submit
