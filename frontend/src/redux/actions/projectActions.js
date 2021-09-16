@@ -21,7 +21,19 @@ import {
 import { logout } from './userActions';
 
 export const createProject = (project) => async (dispatch, getState) => {
-	const { title, subTitle, description } = project;
+	const {
+		title,
+		subTitle,
+		description,
+		image,
+		published,
+		stack,
+		language,
+		framework,
+		library,
+		database,
+		stateManagement,
+	} = project;
 	try {
 		dispatch({
 			type: PROJECT_CREATE_REQUEST,
