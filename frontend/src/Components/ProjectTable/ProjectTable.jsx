@@ -6,14 +6,7 @@ import Loader from '../Loader/Loader';
 import { listProjects, deleteProject } from '../../redux/actions/projectActions';
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import {Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, } from '@mui/material';
 // Material UI Icons
 import CheckIcon from '@material-ui/icons/Check';
 import ErrorIcon from '@material-ui/icons/Error';

@@ -25,12 +25,12 @@ const ProjectSchema = new Schema(
 			required: true,
 		},
 		technologies: {
-			language: { type: String },
-			framework: { type: String },
-			library: { type: String },
-			database: { type: String },
+			languages: [String],
+			frameworks: [String],
+			libraries: [String],
+			databases: [String],
 			stateManagement: { type: String },
-			other: [{ type: String }],
+			other: [String],
 		},
 		images: {
 			thumbnail: {
@@ -41,14 +41,12 @@ const ProjectSchema = new Schema(
 				name: { type: String },
 				image: { type: String },
 			},
-			articleContent: [],
+			articleContent: [String],
 		},
-		links: [
-			{
-				website: { type: String },
-				websiteUrl: { type: String },
-			},
-		],
+		links: {
+			gitHubUrl: { type: String },
+			websiteUrl: { type: String },
+		},
 	},
 	{
 		timestamps: true,

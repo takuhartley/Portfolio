@@ -9,8 +9,8 @@ import {
 	deleteProject,
 } from '../controllers/projectController.js';
 
-router.post('/new', createProject);
 router.get('/', getAllProjects);
+router.route('/new').post(protect, admin, createProject);
 router.route('/:id').delete(protect, admin, deleteProject).get(getProjectById).put(protect, admin, updateProject);
 
 export default router;

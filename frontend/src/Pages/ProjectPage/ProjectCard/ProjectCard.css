@@ -1,67 +1,38 @@
 .project-card-container {
-  border: 1px dotted white;
+  border: 3px dotted red;
   height: 100%;
   width: 100%;
 }
 
-@media screen and (min-width: 980px) {
-  .project-card-container {
-    width: 50%;
-  }
+.project-card-container .project-card-content .project-card-images-thumbnail-container {
+  border: 3px dotted #1100ff;
+  height: 350px;
+  width: 700px;
 }
 
-.project-card-container a {
-  text-decoration: none;
-  color: white;
-}
-
-.project-card-container a .card {
-  border: 1px dotted white;
-  background-color: #111111;
-  -webkit-box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-  -webkit-transition: -webkit-box-shadow 0.5s;
-  transition: -webkit-box-shadow 0.5s;
-  transition: box-shadow 0.5s;
-  transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
-  will-change: transform;
+.project-card-container .project-card-content .project-card-images-thumbnail-container img {
+  position: absolute;
+  z-index: -10;
   border-radius: 25px;
   height: 350px;
   width: 700px;
 }
 
-@media screen and (min-width: 576px) {
-  .project-card-container a .card .card-body {
-    font-size: 18px;
-  }
+.project-card-container .project-card-content .project-card-images-thumbnail-container .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  background-color: #000000;
 }
 
-@media screen and (min-width: 576px) {
-  .project-card-container a .card .project-card-content .project-card-image-container {
-    padding-bottom: 30px;
-  }
-}
-
-.project-card-container a .card .project-card-content .project-card-header-container .project-card-technoliges-container p {
-  background-color: #353535;
-  color: white;
-  font-size: 0.75em;
-  text-align: center;
-  border: 1px solid #a8d8ff;
-  border-radius: 25px;
-  width: 80px;
-  margin: 10px;
-}
-
-.project-card-container a .card .project-card-content .project-card-header-container .project-card-title-container p {
-  margin: 0;
-  font-size: 1em;
-  color: white;
-  font-weight: bold;
-  letter-spacing: 0.5em;
-}
-
-.project-card-container .card:hover {
-  background-color: #7ca08a;
+.project-card-container .project-card-content .project-card-images-thumbnail-container .overlay:hover {
+  opacity: 0;
 }
 /*# sourceMappingURL=ProjectCard.css.map */

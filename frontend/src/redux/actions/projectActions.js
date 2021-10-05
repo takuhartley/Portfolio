@@ -20,51 +20,42 @@ import {
 } from '../constants/projectConstants';
 import { logout } from './userActions';
 
-export const createProject = (project) => async (dispatch, getState) => {
-	const {
-		title,
-		subTitle,
-		description,
-		image,
-		published,
-		stack,
-		language,
-		framework,
-		library,
-		database,
-		stateManagement,
-	} = project;
+export const createProject = () => async (dispatch, getState) => {
 	try {
-		dispatch({
-			type: PROJECT_CREATE_REQUEST,
-		});
-
-		const body = JSON.stringify({ title, subTitle, description });
-
-		const {
-			userLogin: { userInfo },
-		} = getState();
-
-		const config = {
-			headers: {
-				'Content-Type': 'application/json',
-				Authorization: `Bearer ${userInfo.token}`,
-			},
-		};
-
-		const { data } = await axios.post('/api/projects/new', body, config);
-
-		dispatch({
-			type: PROJECT_CREATE_SUCCESS,
-			payload: data,
-		});
+	  dispatch({
+		type: PROJECT_CREATE_REQUEST,
+	  })
+  
+	  const {
+		userLogin: { userInfo },
+	  } = getState()
+  
+	  const config = {
+		headers: {
+		  Authorization: `Bearer ${userInfo.token}`,
+		},
+	  }
+  
+	  const { data } = await axios.post(`/api/project`, {}, config)
+  
+	  dispatch({
+		type: PROJECT_CREATE_SUCCESS,
+		payload: data,
+	  })
 	} catch (error) {
-		dispatch({
-			type: PROJECT_CREATE_FAIL,
-			payload: error.response && error.response.data.message ? error.response.data.message : error.message,
-		});
+	  const message =
+		error.response && error.response.data.message
+		  ? error.response.data.message
+		  : error.message
+	  if (message === 'Not authorized, token failed') {
+		dispatch(logout())
+	  }
+	  dispatch({
+		type: PROJECT_CREATE_FAIL,
+		payload: message,
+	  })
 	}
-};
+  }
 
 export const getProjectDetails = (id) => async (dispatch) => {
 	try {

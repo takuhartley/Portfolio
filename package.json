@@ -43,5 +43,6 @@
     "concurrently": "^6.2.1",
     "nodemon": "^2.0.12"
   },
+  "keywords": [],
   "description": ""
 }

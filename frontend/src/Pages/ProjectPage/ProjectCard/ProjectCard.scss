@@ -1,53 +1,46 @@
 .project-card-container {
-    border: 1px dotted white;
+    border: 3px dotted red;
     height: 100%;
     width: 100%;
 
-    @media screen and (min-width: 980px) {
-        width: 50%;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-
-        .card {
-            border: 1px dotted white;
-            background-color: #111111;
-            box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-            transition: box-shadow 0.5s;
-            will-change: transform;
-            border-radius: 25px;
+    .project-card-content {
+        .project-card-images-thumbnail-container {
+            border: 3px dotted rgb(17, 0, 255);
             height: 350px;
             width: 700px;
 
-            .card-body {
-                @media screen and (min-width: 576px) {
-                    font-size: 18px;
-                }
+            img {
+                position: absolute;
+                z-index: -10;
+                border-radius: 25px;
+                height: 350px;
+                width: 700px;
             }
 
-            .project-card-content {
-                .project-card-image-container {
-                    @media screen and (min-width: 576px) {
-                        padding-bottom: 30px;
-                    }
-                }
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0.5;
+                transition: .5s ease;
+                background-color: #000000;
+            }
 
-                .project-card-header-container {
-                    .project-card-technoliges-container {
-                        p {}
-
-                        .project-card-title-container {
-
-                            p {}
-                        }
-                    }
-                }
+            .overlay:hover {
+                opacity: 0;
             }
         }
 
-        .card:hover {
-            background-color: rgba(0, 0, 0, 0.5);
+        .project-card-header-container {
+            .project-card-technoliges-container {
+                .project-card-title-container {
+                    p {}
+                }
+            }
         }
     }
+}

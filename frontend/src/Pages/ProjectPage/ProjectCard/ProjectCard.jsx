@@ -1,15 +1,4 @@
-// Need to have these in seperate components
-// Every project is going to have a:
-// Title:
-// Description:
-// Summary:
-// Technologies:
-//   For this if I can make it so it automatically adds the project, would be nice
-//   If I can log into my own website to update projects, that would be nice as well
-// Date of completion:
-// Date edited:
 
-// Main ProjectsScreen -> Project -> Project Detail
 // Dependencies
 import React, { useState, useRef } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
@@ -85,27 +74,25 @@ function Card({ children }) {
 }
 const ProjectCard = ({ project }) => {
 	console.log(project._id);
-	const technologies = project.technologies.framework[0];
-	const language = project.technologies.language[0];
 	return (
 		<>
 			<div className="project-card-container">
 				<RouterLink to={`/project/${project._id}`}>
 					<Card>
 						<div className="project-card-content">
-							<div className="project-card-image-container">
-								<img src={project.images.thumbnail} alt={project.title} />
+							<div className="project-card-images-thumbnail-container">
+								<img src={project.images.thumbnail.image} alt={project.title} />
+								<div class="overlay">
+									
+								</div>
 							</div>
+
 							<div className="project-card-header-container">
 								<div className="project-card-title-container">
 									<p>{project.title}</p>
 								</div>
 								<div className="project-card-subtitle-container">
 									<p>{project.subTitle}</p>
-								</div>
-								<div className="project-card-technoliges-container">
-									<p>{technologies}</p>
-									<p>{language}</p>
 								</div>
 							</div>
 						</div>

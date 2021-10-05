@@ -12,31 +12,64 @@ import User from '../models/userModel.js';
 // @route   POST /api/users
 // @access  Public
 const createProject = asyncHandler(async (req, res) => {
-	const { title, subTitle, description, images, technologies, links } = req.body;
-	const projectFields = {
-		user: req.user.id,
-		title: title,
-		subTitle: subTitle,
-	};
+	// Destructure Request Body
+	// Build objects (technologies, links, images)
+	// const technologies = { languages, frameworks, libraries, databases, stateManagement, other };
+	// const links = { websiteURL, github };
+	// const images = { thumbnail, icon, articleContent };
+
+	// Normalize links in URL
+	// for (const [key, value] of Object.entries(links)) {
+	// 	if (value && value.length > 0) links[key] = normalize(value, { forceHttps: true });
+	// }
+
+	// Build Project
 	const project = new Project({
-		user: user,
-		title,
-		subTitle,
-		description,
-		images,
-		technologies,
-		links,
+		user: req.user._id,
+		title: 'Sample Title',
+		subTitle: 'Sample Sub Title',
+		description: 'Sample Description',
+		technologies: {
+			languages: ['Sample Language 1', 'Sample Language 2', 'Sample Language 3'],
+			frameworks: ['React', 'VueJS', 'Angular'],
+			libraries: ['Next.js'],
+			databases: ['MongoDB'],
+			stateManagement: 'Redux',
+			other: ['MongooseJS', 'ExpressJS', 'NodeJS'],
+		},
+		images: {
+			thumbnail: {
+				name: 'Anime Thumbnail',
+				image: '/images/anime-website-thumbnail',
+			},
+			icon: {
+				name: 'Anime Icon',
+				image: '/images/anime-website-icon',
+			},
+			articleContent: ['/images/p-a-c-1', '/images/p-a-c-2'],
+		},
+		links: {
+			gitHubUrl: 'github.com',
+			websiteUrl: 'google.com',
+		},
 	});
-	if (project) {
-		res.status(201).json({
-			project,
-		});
-	} else {
-		res.status(400);
-		throw new Error('Invalid project data');
-	}
+
 	const createdProject = await project.save();
 	res.status(201).json(createdProject);
+
+	// Add to Project Object
+	// project.technologies = technologies;
+	// project.images = images;
+	// project.links = links;
+
+	// if (project) {
+	// 	res.status(201).json({
+	// 		project,
+	// 	});
+	// } else {
+	// 	res.status(400);
+	// 	throw new Error('Invalid project data');
+	// }
 });
 // ----------------------------------------------------------------------------------------------------
 // @desc    Update user profile

@@ -10,6 +10,7 @@ import FormContainer from '../../../Components/FormContainer';
 import { createProject } from '../../../redux/actions/projectActions';
 // import { PROJECT_CREATE_RESET } from '../../../redux/constants/projectConstants';
 import Loader from '../../../Components/Loader/Loader';
+
 // Material UI
 import {
 	Box,
@@ -25,8 +26,7 @@ import {
 	MenuItem,
 	NativeSelect,
 	FormHelperText,
-} from '@material-ui/core';
-
+} from '@mui/material';
 import './ProjectCreatePage.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -65,7 +65,7 @@ const ProjectCreatePage = ({ location, history }) => {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		
+
 		dispatch(
 			createProject({
 				title,

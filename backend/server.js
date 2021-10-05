@@ -1,10 +1,8 @@
 // Dependencies
 import path from 'path';
-import colors from 'colors';
 import dotenv from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
-import bodyParser from 'body-parser';
 import cors from 'cors';
 // ----------------------------------------------------------------------------------------------------
 // import path from 'path';
@@ -14,7 +12,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 // Routes (Import):
 import userRoutes from './routes/userRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
-import uploadRoutes from './routes/uploadRoutes.js'
+import uploadRoutes from './routes/uploadRoutes.js';
 // ----------------------------------------------------------------------------------------------------
 dotenv.config();
 // ----------------------------------------------------------------------------------------------------
@@ -28,6 +26,11 @@ const app = express();
 // ----------------------------------------------------------------------------------------------------
 // Asking express to use json as a default
 app.use(express.json());
+app.use(
+	express.urlencoded({
+		extended: true,
+	})
+);
 // ----------------------------------------------------------------------------------------------------
 // Initial Test Route
 app.get('/', (req, res) => {
@@ -65,4 +68,4 @@ app.use(errorHandler);
 // ----------------------------------------------------------------------------------------------------
 const PORT = process.env.PORT || 5000;
 // ----------------------------------------------------------------------------------------------------
-app.listen(PORT, console.log(`Server runnin in ${process.env.NODE_ENV} mode on ${PORT}`.red.bold));
+app.listen(PORT, console.log(`Server runnin in ${process.env.NODE_ENV} mode on ${PORT}`));
