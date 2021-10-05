@@ -38,14 +38,14 @@ import './Login.css';
 // Copy Right Function
 function Copyright() {
 	return (
-		// <Typography variant="body2" color="textSecondary" align="center">
-		// 	{'Copyright © '}
-		// 	<RouterLink component={RouterLink} to="/">
-		// 		AnimeCenter
-		// 	</RouterLink>{' '}
-		// 	{new Date().getFullYear()}
-		// 	{'.'}{' '}
-		// </Typography>
+		 <Typography variant="body2" color="textSecondary" align="center">
+		 	{'Copyright © '}
+		 	<RouterLink component={RouterLink} to="/">
+		 		AnimeCenter
+		 	</RouterLink>{' '}
+		 	{new Date().getFullYear()}
+		 	{'.'}{' '}
+		</Typography>
 		null
 	);
 }
