@@ -1,9 +1,9 @@
-// Dependencies Imports
+// Dependencie
 import React from 'react';
-
-// React Router Dom
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+
+// Components
 import { logout } from '../../redux/actions/userActions';
 
 // Styles Imports
@@ -50,13 +50,16 @@ const Navbar = () => {
 								Contact
 							</Link>
 						</li>
-						{userInfo ? (
-							<li>
-								<Link to={`/logout`} className="navbar-links" onClick={logoutHandler}>
-									Logout
-								</Link>
-							</li>
-						) : null}
+						
+								{userInfo ? (
+									<li>
+									<Link to={`/logout`} className="navbar-links" onClick={logoutHandler}>
+										Logout
+									</Link>
+									</li>
+								) : <li><Link to={`/login`} className="navbar-links">
+										Login
+									</Link></li>}
 					</ul>
 				</nav>
 			</div>
