@@ -50,6 +50,7 @@ const Navbar = () => {
 								Contact
 							</Link>
 						</li>
+<<<<<<< HEAD:frontend/src/Components/Navbar/Navbar.jsx
 						
 								{userInfo ? (
 									<li>
@@ -60,6 +61,18 @@ const Navbar = () => {
 								) : <li><Link to={`/login`} className="navbar-links">
 										Login
 									</Link></li>}
+=======
+						{userInfo ? (
+							<li>
+								<Link to={`/logout`} className="navbar-links" onClick={logoutHandler}>
+									Logout
+								</Link>
+								<Link to={`/admin/dashboard`} className="navbar-links">
+									Dashboard
+								</Link>
+							</li>
+						) : null}
+>>>>>>> 4994ea23f9c8306a7d9f624961861af1cacf2098:frontend/src/Components/Navbar/Navbar.js
 					</ul>
 				</nav>
 			</div>

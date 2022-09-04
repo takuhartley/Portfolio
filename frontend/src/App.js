@@ -18,8 +18,12 @@ import BlogPage from './Pages/BlogPage/BlogPage';
 // Project
 import ProjectPage from './Pages/ProjectPage/ProjectPage';
 import ProjectDetailsPage from './Pages/ProjectPage/ProjectDetails/ProjectDetailsPage';
-import CreateProject from './Pages/ProjectPage/Controllers/CreateProject';
-import EditProject from './Pages/ProjectPage/Controllers/EditProject';
+
+// Admin
+import UserEdit from './Pages/DashboardPage/UserEditPage/UserEditPage';
+import ProjectCreate from './Pages/DashboardPage/ProjectCreatePage/ProjectCreatePage';
+import ProjectEdit from './Pages/DashboardPage/ProjectEditPage/ProjectEditPage';
+import DashboardPage from './Pages/DashboardPage/DashboardPage';
 
 // Styles Imports
 import './App.css';
@@ -36,14 +40,17 @@ function App() {
 							path={'/(.+)'}
 							render={() => (
 								<>
-									<Route exact path="/about" component={BioPage} />
+									<Route exact path="/login" component={Login} />
 									<Route exact path="/projects" component={ProjectPage} />
 									<Route exact path="/project/:id" component={ProjectDetailsPage} />
-									<Route exact path="/project/:id/edit" component={EditProject} />
-									<Route exact path="/meh/create" component={CreateProject} />
-									<Route exact path="/contact" component={ContactPage} />
-									<Route exact path="/login" component={Login} />
+									<Route exact path="/about" component={BioPage} />
 									<Route exact path="/blog" component={BlogPage} />
+									<Route exact path="/contact" component={ContactPage} />
+
+									<Route exact path="/admin/dashboard" component={DashboardPage} />
+									<Route exact path="/admin/user/:id/edit" component={UserEdit} />
+									<Route exact path="/admin/project/:id/edit" component={ProjectEdit} />
+									<Route exact path="/admin/project/new" component={ProjectCreate} />
 								</>
 							)}
 						/>

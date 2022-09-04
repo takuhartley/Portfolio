@@ -22,7 +22,6 @@ const protect = asyncHandler(async (req, res, next) => {
             // Which parameters matches a decoded token's id 
             // Importing their information other than their password (-password)
 			req.user = await User.findById(decoded.id).select('-password');
-
             // Calling the input parameter function next()
             // Which will take us to the next process
 			next();

@@ -9,6 +9,7 @@ import {
 	userDetailsReducer,
 	userListReducer,
 	userUpdateReducer,
+	userDeleteReducer,
 } from './redux/reducers/userReducers';
 // ----------------------------------------------------------------------------------------------------
 import {
@@ -16,6 +17,7 @@ import {
 	projectDetailsReducer,
 	projectCreateReducer,
 	projectUpdateReducer,
+	projectDeleteReducer,
 } from './redux/reducers/projectReducers';
 // ----------------------------------------------------------------------------------------------------
 // Reducers
@@ -25,11 +27,13 @@ const reducer = combineReducers({
 	userList: userListReducer,
 	userDetails: userDetailsReducer,
 	userUpdate: userUpdateReducer,
+	userDelete: userDeleteReducer,
 	// Project
 	projectCreate: projectCreateReducer,
 	projectList: projectListReducer,
 	projectDetails: projectDetailsReducer,
 	projectUpdate: projectUpdateReducer,
+	projectDelete: projectDeleteReducer,
 });
 // ----------------------------------------------------------------------------------------------------
 const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null;

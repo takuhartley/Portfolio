@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oBAAoB,CAAC;EACjB,MAAM,EAAE,eAAe;EACvB,gBAAgB,EAAE,KAAK;EACvB,aAAa,EAAE,MAAM;EACrB,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "ProjectCreatePage.scss"
+    ],
+    "names": [],
+    "file": "ProjectCreatePage.css"
+}

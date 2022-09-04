@@ -1,13 +1,8 @@
 // Dependencies
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 // Redux Imports
 import { useDispatch, useSelector } from 'react-redux';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-// Material UI Core
-import { Grid, Container } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
 // Components
 import ProjectCard from './ProjectCard/ProjectCard';
@@ -17,76 +12,60 @@ import Loader from '../../Components/Loader/Loader';
 // Actions Imports
 import { listProjects } from '../../redux/actions/projectActions';
 
-// SCSS
+// CSS
 import './ProjectPage.css';
 
 // Material UI Core
-const useStyles = makeStyles((theme) => ({
-	root: {
-		flexGrow: 1,
-	},
-	paper: {
-		padding: theme.spacing(2),
-		textAlign: 'center',
-		color: theme.palette.text.secondary,
-	},
-}));
+import {
+	Box,
+	FormControl,
+	Input,
+	InputLabel,
+	Container,
+	Checkbox,
+	Switch,
+	FormGroup,
+	FormControlLabel,
+	TextField,
+	MenuItem,
+	NativeSelect,
+	FormHelperText,
+} from '@mui/material';
 // ----------------------------------------------------------------------------------------------------
 const ProjectPage = () => {
 	// Redux
 	const dispatch = useDispatch();
 	const projectList = useSelector((state) => state.projectList);
-	const userLogin = useSelector((state) => state.userLogin);
-	const { userInfo } = userLogin;
-	// Decontructing animeDetails on Redux store
+	// const userLogin = useSelector((state) => state.userLogin);
+	// const { userInfo } = userLogin;
+	// Decontructing projectDetails on Redux store
 	const { loading, error, projects } = projectList;
-
-	// const classes = useStyles();
-	// Effect
+	// On Page Load call List of Projects
 	useEffect(() => {
 		dispatch(listProjects());
 	}, [dispatch]);
 
 	return (
 		<>
-			<div>
-				{loading ? (
-					<Loader />
-				) : error ? (
-					<Message variant="error">{error}</Message>
-				) : (
-					<div className="project-container">
-						<div className="project-page-title">
-							<p className="linear-wipe">Check out my projects idk</p>
-						</div>
-						{userInfo ? (
-							<div className="project-navigation">
-								<ul>
-									<li>
-										<Link to={`/project/edit`}>Edit</Link>
-									</li>
-									<li>
-										<Link to={'/project/new'}>
-											I{/* <FontAwesomeIcon
-												icon={['fal', 'plus-octagon']}
-												size="lg"
-												style={{ textDecoration: 'none' }}
-											/> */}
-										</Link>
-									</li>
-								</ul>
+			<div className="project-page-container">
+				<Container maxWidth="md">
+					{loading ? (
+						<Loader />
+					) : error ? (
+						<Message variant="error">{error}</Message>
+					) : (
+						<div className="project-page-content">
+							<div className="project-page-title">
+								<p className="linear-wipe">Projects</p>
 							</div>
-						) : null}
-
-						<div className="project-page-row">
-							{projects.map((project) => (
-								<>
+							<div className="project-page-row">
+								{projects.map((project) => (
 									<ProjectCard key={project._id} className="project-card" project={project} />
-								</>
-							))}
+								))}
+							</div>
 						</div>
-					</div>
-				)}
+					)}
+				</Container>
 			</div>
 		</>
 	);
