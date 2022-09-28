@@ -39,15 +39,9 @@ app.get('/', (req, res) => {
 // app.use("/api/users", require("./routes/api/users"));
 app.use('/api/users', userRoutes);
 app.use('/api/projects', projectRoutes);
-<<<<<<< HEAD
-// Middleware------------------------------------------------------------------------------------------
-app.use(notFound);
-app.use(errorHandler);
-=======
 app.use('/api/upload', uploadRoutes);
 // ----------------------------------------------------------------------------------------------------
 // Middleware
->>>>>>> 4994ea23f9c8306a7d9f624961861af1cacf2098
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(
